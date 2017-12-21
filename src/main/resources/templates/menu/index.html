@@ -7,12 +7,13 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
+<a href="/menu/add">Add Menu</a>
 
-    <ul>
-        <li th:each="category : ${categories}" th:text="${category.name}"></li>
-    </ul>
-
-<a href="/category/add">Add</a>
+<ul>
+    <li th:each="menu : ${menus}">
+        <a th:href="'/menu/view/' + ${menu.id}" th:text="${menu.name}"></a>
+    </li>
+</ul>
 
 </body>
 </html>
